@@ -5,6 +5,7 @@ function App() {
     <>
       <div>
         <h1 className="text-red-500">ここだよ～</h1>
+        <button className="btn btn-primary">ボタン</button>
       </div>
     </>
   )
