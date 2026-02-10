@@ -1,14 +1,13 @@
 import './index.css';
+import { Route, Routes } from "react-router-dom";
+import TopPage from "./pages/home/top_page";
 
 function App() {
   return (
-    <>
-      <div>
-        <h1 className="text-red-500">ここだよ～</h1>
-        <button className="btn btn-primary">ボタン</button>
-      </div>
-    </>
-  )
+    <Routes>
+      <Route path="/" element={<TopPage />} />
+    </Routes>
+  );
 }
 
 export default App
