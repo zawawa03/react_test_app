@@ -36,59 +36,69 @@ export default function SignUpForm() {
       password,
       password_confirmation,
     }
-
-    await signUpUser(formData)
-    navigate("/");
-  }
+    
+    try {
+      console.log(`${formData}`)
+      await signUpUser(formData)
+      navigate("/");
+    } catch (errors) {
+      console.log(errors)
+    };
+  };
   
   return (
-    <div className="sign_up_page h-screen bg-primary-content">
-      <h2>新規登録</h2>
+    <div className="sign_up_page h-screen flex justify-center">
+      <div className="flex flex-col justify-center">
+      <h2 className="text-neutral text-xl font-bold mb-3">新規登録</h2>
       <form onSubmit={handleSubmit} className="form">
-        <div className="name_form">
+        <div className="name_form flex flex-col">
           <label>名前</label>
           <input 
             type="text"
             name="name"
-            className="input"
+            className="input my-2"
             value={name}
             onChange={onChangeName}
           />  
         </div>
-        <div className="email_form">
+        <div className="email_form flex flex-col">
           <label>メールアドレス</label>
           <input
-            type="text"
+            type="email"
             name="email"
+            className="input my-2"
             value={email}
             onChange={onChangeEmail}
           />  
         </div>
-        <div className="password_form">
+        <div className="password_form flex flex-col">
           <label>パスワード</label>
           <input
-            type="text"
+            type="password"
             name="password"
+            className="input my-2"
             value={password}
             onChange={onChangePassword}
           />  
         </div>
-        <div className="password_confirm_form">
+        <div className="password_confirm_form flex flex-col">
           <label>パスワード確認</label>
           <input
-            type="text"
+            type="password"
             name="password_confirmation"
+            className="input my-2"
             value={password_confirmation}
             onChange={onChangePasswordConfirmation}
           />  
         </div>
-        <button type="submit" className="button">
+        <button type="submit" className="btn btn-sm mt-3">
           登録する
         </button>
       </form>
-      <Link to="/login">
-        <button className="">ログイン</button>
+      <Link to="/login" className="btn btn-sm mt-3">
+        ログイン
       </Link>
+      </div>
     </div>
   )
 
