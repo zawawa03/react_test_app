@@ -42,7 +42,7 @@ export default function SignUpForm() {
       await signUpUser(formData)
       navigate("/");
     } catch (errors) {
-      console.log(errors)
+      console.log(errors);
     };
   };
   
@@ -78,6 +78,7 @@ export default function SignUpForm() {
             name="password"
             className="input my-2"
             value={password}
+            autoComplete="new-password"
             onChange={onChangePassword}
           />  
         </div>
@@ -88,6 +89,7 @@ export default function SignUpForm() {
             name="password_confirmation"
             className="input my-2"
             value={password_confirmation}
+            autoComplete="new-password"
             onChange={onChangePasswordConfirmation}
           />  
         </div>
