@@ -4,3 +4,5 @@ export interface User {
   password: string;
   password_confirmation: string;
 }
+
+export type LoginFormData = Omit<User, "name" | "password_confirmation">;
